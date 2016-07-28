@@ -14,14 +14,14 @@ AC_PROG_CC
 
 case "$OSTYPE" in
   darwin* )
-        TAB_CFLAGS="-g -F/Library/Frameworks"
+        TAB_CFLAGS="-g -F/Library/Frameworks  -std=c++11 -stdlib=libc++"
         TAB_LIBS="-framework TableauCommon -framework TableauExtract -framework TableauServer"
         ;;
   linux*)
         AC_PATH_PROG([TDE_CONFIG], [tdeserver64])
         if test "${TDE_CONFIG}" != ""; then
-             TAB_CFLAGS=`${TAB_CONFIG} --cflags`
-             TAB_LIBS=`${TAB_CONFIG} --libs`
+             TAB_CFLAGS="-I/usr/include -std=c++0x"
+             TAB_LIBS="-Wl,-rpath,/usr/lib64/tableausdk -L/usr/lib64/tableausdk -lTableauCommon -lTableauExtract -lTableauServer"
         else
              AC_MSG_ERROR([tdeserver64 not found, did you install the Tableau SDK?])
         fi
