@@ -1,0 +1,22 @@
+Package: rtableau
+Type: Package
+Title: Rcpp bindings for the Tableau SDK
+Description: The rtableau package enables users to export R data.frame
+  objects to Tableau Data Extract (.tde) files using Rcpp and
+  the Tableau SDK. It also implements publishing .tde files to
+  a Tableau Server.
+Version: 0.1.0
+Authors@R: person("Mark", "Hayden", email = "mark.hayden@adroll.com",
+                  role = c("aut", "cre"))
+URL: https://github.com/markahayden/rtableau
+BugReports: https://github.com/markahayden/rtableau/issues
+License: GNU GPL (>= 3)
+LazyData: TRUE
+Imports:
+    Rcpp (>= 0.12.6)
+LinkingTo: Rcpp
+SystemRequirements: Tableau SDK
+RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

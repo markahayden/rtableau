@@ -1,0 +1,7 @@
+# set by configure
+TAB_CFLAGS = @TAB_CFLAGS@
+TAB_LIBS   = @TAB_LIBS@
+
+# combine with standard arguments for R
+PKG_CXXFLAGS = `Rscript -e 'Rcpp:::CxxFlags()'` $(TAB_CFLAGS) -I../inst/include -std=c++11 -stdlib=libc++
+PKG_LIBS = `Rscript -e 'Rcpp:::LdFlags()'` $(TAB_LIBS)
