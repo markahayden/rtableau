@@ -14,7 +14,7 @@ AC_PROG_CC
 
 case "$OSTYPE" in
   darwin* )
-        TAB_CFLAGS="-g -F/Library/Frameworks  -std=c++11 -stdlib=libc++"
+        TAB_CFLAGS="-g -F/Library/Frameworks"
         TAB_LIBS="-framework TableauCommon -framework TableauExtract -framework TableauServer"
         ;;
   linux*)
