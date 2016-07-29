@@ -2565,8 +2565,8 @@ fi
 
 
         if test "${TDE_CONFIG}" != ""; then
-             TAB_CFLAGS=`${TAB_CONFIG} --cflags`
-             TAB_LIBS=`${TAB_CONFIG} --libs`
+             TAB_CFLAGS="-I/usr/include -std=c++0x"
+             TAB_LIBS="-Wl,-rpath,/usr/lib64/tableausdk -L/usr/lib64/tableausdk -lTableauCommon -lTableauExtract -lTableauServer"
         else
              as_fn_error $? "tdeserver64 not found, did you install the Tableau SDK?" "$LINENO" 5
         fi
